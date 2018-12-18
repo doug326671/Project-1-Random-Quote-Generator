@@ -58,6 +58,7 @@ var quotes = [
     
 ];
 
+// My get random quote function that will randomly select an index in the array and I will grab the object of that index
 function getRandomQuote(array){
 
 var random = (Math.floor( Math.random() * (array.length)));
@@ -69,7 +70,7 @@ return combinedQuote;
 }
 
 
-
+// My print quote function. Inside the print quote function the get random quote function. 
 function printQuote () {
     var randomQuote = getRandomQuote(quotes);
     var HTML="";
@@ -77,9 +78,12 @@ function printQuote () {
     HTML += '<p class="source">' + randomQuote.source + '</p>';
     
     document.getElementById("quote-box").innerHTML = HTML;
-    //return HTML;
+    document.getElementById('loadQuote').addEventListener("click", printQuote, false);
+  
   }
   
+  
+
   printQuote();
 
  
